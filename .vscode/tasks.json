@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run version",
+            "type": "shell",
+            "command": "./concurrency version",
+            "problemMatcher": [],
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "go build -v -ldflags=\"-X 'github.com/dmatusiewicz/concurrency/cmd.Version=v1.0.2'\"",
+          }
+          
+    ]
+}
