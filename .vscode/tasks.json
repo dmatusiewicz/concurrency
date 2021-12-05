@@ -18,7 +18,7 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "go build -v -ldflags=\"-X 'github.com/dmatusiewicz/concurrency/cmd.Version=v1.0.2'\"",
+            "command": "go build -v -ldflags=\"-X 'github.com/dmatusiewicz/concurrency/cmd.Version=`git rev-parse HEAD`'\"",
           }
           
     ]
