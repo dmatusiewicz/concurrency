@@ -1,15 +1,20 @@
 package cmd
 
 import (
+	"log"
+
 	"github.com/spf13/cobra"
 )
 
-var rootCommand = &cobra.Command{
+var rootCmd = &cobra.Command{
+	Use: "concurrency",
 	Run: root,
 }
 
 func Execute() {
-	rootCommand.Execute()
+	if err := rootCmd.Execute(); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func root(cmd *cobra.Command, args []string) {
